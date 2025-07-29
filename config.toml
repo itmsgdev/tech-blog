@@ -1,6 +1,6 @@
-baseURL = "https://YOUR_USERNAME.github.io/tech-blog/"
+baseURL = "https://itmsgdev.github.io/tech-blog/"
 languageCode = "ko"
-title = "나의 PaperModX 블로그"
+title = "아이티메세지 기술 블로그"
 theme = "PaperModX"
 paginate = 10
 
@@ -22,7 +22,7 @@ paginate = 10
   home = ["HTML", "RSS", "JSON"]
 
 [params]
-  description = "기술 블로그입니다"
+  description = "아이티메세지 기술 블로그입니다"
   env = "production"
   ShowCodeCopyButtons = true
   ShowBreadCrumbs = true
@@ -38,11 +38,7 @@ paginate = 10
   
   [params.homeInfoParams]
     Title = "안녕하세요! 👋"
-    Content = "기술 블로그에 오신 것을 환영합니다."
-  
-  [[params.socialIcons]]
-    name = "github"
-    url = "https://github.com/yourusername"
+    Content = "블로그에 오신 것을 환영합니다."
   
   [params.assets]
     disableHLJS = false
