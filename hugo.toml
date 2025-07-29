@@ -75,7 +75,7 @@ weight = 40
   
   [params.assets]
     disableHLJS = false
-    disableFingerprinting = false
+    disableFingerprinting = true  # GitHub Pages에서 CSS 로딩 문제 해결
     favicon = "favicon.ico"
     favicon16x16 = "favicon-16x16.png"
     favicon32x32 = "favicon-32x32.png"
