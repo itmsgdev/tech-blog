@@ -1,0 +1,49 @@
+baseURL = "https://YOUR_USERNAME.github.io/tech-blog/"
+languageCode = "ko"
+title = "나의 PaperModX 블로그"
+theme = "PaperModX"
+paginate = 10
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    style = "github"
+    lineNos = true
+    codeFences = true
+    guessSyntax = true
+
+[services]
+  [services.rss]
+    limit = 20
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[params]
+  description = "기술 블로그입니다"
+  env = "production"
+  ShowCodeCopyButtons = true
+  ShowBreadCrumbs = true
+  ShowPostNavLinks = true
+  ShowWordCount = true
+  ShowRssButtonInSectionTermList = true
+  UseHugoToc = true
+  disableSpecial1stPost = false
+  disableScrollToTop = false
+  hidemeta = false
+  showtoc = false
+  tocopen = false
+  
+  [params.homeInfoParams]
+    Title = "안녕하세요! 👋"
+    Content = "기술 블로그에 오신 것을 환영합니다."
+  
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/yourusername"
+  
+  [params.assets]
+    disableHLJS = false
+    disableFingerprinting = false
