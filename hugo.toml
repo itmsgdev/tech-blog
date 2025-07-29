@@ -29,6 +29,12 @@ name = "검색"
 url = "/search/"
 weight = 40
 
+[[menu.main]]
+identifier = "tags"
+name = "태그"
+url = "/tags/"
+weight = 50
+
 # Sass/SCSS 처리를 위한 설정
 [build]
   writeStats = true
@@ -49,11 +55,21 @@ weight = 40
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
+
+[taxonomies]
+  tag = "tags"
 
 [params]
   description = "아이티메세지 기술 블로그입니다"
+  author = "아이티메세지 개발팀"  # 기본 저자
   env = "production"  # GitHub Pages용
   ShowCodeCopyButtons = true
+  ShowPostMeta = true      # 포스트 메타 정보 표시
+  ShowAuthor = true        # 저자 정보 표시
   ShowBreadCrumbs = true
   ShowPostNavLinks = true
   ShowWordCount = true
