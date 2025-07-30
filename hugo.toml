@@ -1,39 +1,10 @@
 baseURL = "https://itmsgdev.github.io/tech-blog/"
-languageCode = "ko"
+defaultContentLanguage = "ko"
 title = "아이티메세지 기술 블로그"
 theme = "PaperModX"
-paginate = 10
 
-# 메뉴 설정
-[[menu.main]]
-identifier = "home"
-name = "홈"
-url = "/"
-weight = 10
-
-[[menu.main]]
-identifier = "posts"
-name = "블로그"
-url = "/posts/"
-weight = 20
-
-[[menu.main]]
-identifier = "archives"
-name = "아카이브"
-url = "/archives/"
-weight = 30
-
-[[menu.main]]
-identifier = "search"
-name = "검색"
-url = "/search/"
-weight = 40
-
-[[menu.main]]
-identifier = "tags"
-name = "태그"
-url = "/tags/"
-weight = 50
+[pagination]
+pagerSize = 10
 
 # Sass/SCSS 처리를 위한 설정
 [build]
@@ -62,14 +33,116 @@ weight = 50
 
 [taxonomies]
   tag = "tags"
+  category = "categories"
+
+# 다국어 설정
+[languages]
+  [languages.ko]
+    languageName = "한국어"
+    weight = 1
+    title = "아이티메세지 기술 블로그"
+    
+    [languages.ko.params]
+      description = "아이티메세지 기술 블로그입니다"
+      author = "아이티메세지 개발팀"
+      
+      [languages.ko.params.homeInfoParams]
+        Title = "안녕하세요! 👋"
+        Content = "아이티메세지 기술 블로그에 오신 것을 환영합니다."
+    
+    # 한국어 메뉴
+    [[languages.ko.menu.main]]
+    identifier = "home"
+    name = "홈"
+    url = "/"
+    weight = 10
+    
+    [[languages.ko.menu.main]]
+    identifier = "posts"
+    name = "블로그"
+    url = "/posts/"
+    weight = 20
+    
+    [[languages.ko.menu.main]]
+    identifier = "archives"
+    name = "아카이브"
+    url = "/archives/"
+    weight = 30
+    
+    [[languages.ko.menu.main]]
+    identifier = "search"
+    name = "검색"
+    url = "/search/"
+    weight = 40
+    
+    [[languages.ko.menu.main]]
+    identifier = "tags"
+    name = "태그"
+    url = "/tags/"
+    weight = 50
+    
+    [[languages.ko.menu.main]]
+    identifier = "categories"
+    name = "카테고리"
+    url = "/categories/"
+    weight = 60
+
+  [languages.en]
+    languageName = "English"
+    weight = 2
+    title = "ITMSG Tech Blog"
+    
+    [languages.en.params]
+      description = "ITMSG Technology Blog"
+      author = "ITMSG Development Team"
+      
+      [languages.en.params.homeInfoParams]
+        Title = "Welcome! 👋"
+        Content = "Welcome to ITMSG Technology Blog."
+    
+    # 영어 메뉴
+    [[languages.en.menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/en/"
+    weight = 10
+    
+    [[languages.en.menu.main]]
+    identifier = "posts"
+    name = "Posts"
+    url = "/en/posts/"
+    weight = 20
+    
+    [[languages.en.menu.main]]
+    identifier = "archives"
+    name = "Archives"
+    url = "/en/archives/"
+    weight = 30
+    
+    [[languages.en.menu.main]]
+    identifier = "search"
+    name = "Search"
+    url = "/en/search/"
+    weight = 40
+    
+    [[languages.en.menu.main]]
+    identifier = "tags"
+    name = "Tags"
+    url = "/en/tags/"
+    weight = 50
+    
+    [[languages.en.menu.main]]
+    identifier = "categories"
+    name = "Categories"
+    url = "/en/categories/"
+    weight = 60
 
 [params]
-  description = "아이티메세지 기술 블로그입니다"
-  author = "아이티메세지 개발팀"  # 기본 저자
   env = "production"  # GitHub Pages용
+  displayFullLangName = true  # 언어 전체 이름 표시
   ShowCodeCopyButtons = true
-  ShowPostMeta = true      # 포스트 메타 정보 표시
-  ShowAuthor = true        # 저자 정보 표시
+  ShowPostMeta = true
+  ShowAuthor = true
   ShowBreadCrumbs = true
   ShowPostNavLinks = true
   ShowWordCount = true
@@ -80,14 +153,10 @@ weight = 50
   hidemeta = false
   showtoc = false
   tocopen = false
-  
-  [params.homeInfoParams]
-    Title = "안녕하세요! 👋"
-    Content = "블로그에 오신 것을 환영합니다."
 
   [params.assets]
     disableHLJS = false
-    disableFingerprinting = true  # GitHub Pages에서 CSS 로딩 문제 해결
+    disableFingerprinting = true
     favicon = "favicon.ico"
     favicon16x16 = "favicon-16x16.png"
     favicon32x32 = "favicon-32x32.png"
