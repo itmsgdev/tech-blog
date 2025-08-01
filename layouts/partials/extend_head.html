@@ -1,10 +1,41 @@
 <script>
-// 언어 전환 버튼을 헤더에 추가
+// 언어 전환 버튼을 헤더에 추가 (번역 파일이 있을 때만)
 document.addEventListener('DOMContentLoaded', function() {
     const logoSwitches = document.querySelector('.logo-switches');
     
     if (logoSwitches) {
-        // 언어 전환 컨테이너 생성
+        checkTranslationExists().then(function(hasTranslation) {
+            if (hasTranslation) {
+                createLanguageSwitch();
+            }
+        });
+    }
+    
+    function checkTranslationExists() {
+        return new Promise(function(resolve) {
+            const currentPath = window.location.pathname;
+            let translationUrl;
+            
+            if (currentPath.includes('/en/')) {
+                // 영어 페이지에서 한국어 번역본 확인
+                translationUrl = currentPath.replace('/en/', '/');
+            } else {
+                // 한국어 페이지에서 영어 번역본 확인
+                translationUrl = currentPath.replace('/tech-blog/', '/tech-blog/en/');
+            }
+            
+            // HEAD 요청으로 번역본 존재 확인
+            fetch(translationUrl, { method: 'HEAD' })
+                .then(function(response) {
+                    resolve(response.ok);
+                })
+                .catch(function() {
+                    resolve(false);
+                });
+        });
+    }
+    
+    function createLanguageSwitch() {
         const langSwitch = document.createElement('div');
         langSwitch.className = 'lang-switch';
         
@@ -48,3 +79,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+
+<style>
+.lang-switch {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 8px;
+    font-size: 14px;
+    color: var(--secondary);
+}
+
+.lang-link {
+    color: var(--secondary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 2px 4px;
+    border-radius: 3px;
+    transition: color 0.2s ease;
+}
+
+.lang-link:hover {
+    color: var(--primary);
+}
+
+.lang-link.current-lang {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .lang-switch {
+        font-size: 13px;
+    }
+}
+</style>
