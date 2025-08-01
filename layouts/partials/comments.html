@@ -1,0 +1,4 @@
+{{/* Giscus 댓글 시스템 */}}
+{{- if .Site.Params.giscus.enable -}}
+  {{- partial "giscus.html" . -}}
+{{- end -}}
