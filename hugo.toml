@@ -156,21 +156,7 @@ pagerSize = 10
   # Mermaid 다이어그램 지원
   mermaid = true
 
-  # Giscus 댓글 시스템 설정
-  [params.giscus]
-    enable = true
-    repo = "itmsgdev/tech-blog"              # GitHub 저장소 (owner/repo)
-    repoId = "R_kgDOPRM8Gw"                  # 저장소 ID (giscus.app에서 생성)
-    category = "Comments"                     # Discussion 카테고리
-    categoryId = "DIC_kwDOPRM8G84CtqNO"          # 카테고리 ID (giscus.app에서 생성)
-    mapping = "pathname"                     # 페이지 매핑 방식
-    strict = "0"                            # 엄격한 제목 매칭
-    reactionsEnabled = "1"                  # 반응 기능 활성화
-    emitMetadata = "0"                      # 메타데이터 전송
-    inputPosition = "bottom"                # 입력창 위치
-    theme = "preferred_color_scheme"        # 테마
-    lang = "ko"                             # 언어
-    loading = "lazy"                        # 지연 로딩
+  # 댓글 시스템은 현재 비활성화되어 있습니다
 
   [params.assets]
     disableHLJS = false
